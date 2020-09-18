@@ -1,0 +1,361 @@
+
+html, body {
+	height: 100vh;
+	width: 100%;
+    position: relative;	
+}
+//导航
+.navbar {
+	 user-select: none;
+	 border-bottom: 1px solid #ddd;
+    .navbar-brand {
+        font-size: 2.25rem;
+    }
+}
+
+// 内容
+.main_content {
+	height: 100%;
+	// 登录
+	.login {
+		width: 380px;
+		height: 260px;
+		border: 1px solid #ddd;
+		padding: 20px;
+		position: relative;
+		.login_main {
+			height: 100%;
+		}
+		.login_loding {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 8;
+			background-color: #fff;
+			opacity: 0.8;
+			
+		}
+		.login_loading_hide {
+			display: none !important;
+		}
+	}
+	
+	// 离线消息
+	.mesage {
+		height: 100%;
+		width: 100%;
+		padding: 20px;
+		user-select: none;
+		.mesage_watch {
+			border: 1px solid #ddd;
+			.message_option {
+				height: 35%;
+				padding: 20px;
+				border-bottom: 1px solid #ccc;
+				justify-content: space-evenly !important;
+				.mesage_more{
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					div{
+						display: flex;
+						justify-content: space-between;
+						width:50px;
+						span{
+							display: block;
+							width:10px;
+							height:10px;
+							border-radius: 50%;
+							border:1px solid #ccc;
+						}
+					}
+				}
+			}
+			//离线消息显示
+			.mesage_display {
+				height: 65%;
+				list-style: none;
+				padding: 0;
+				overflow: auto;
+				.message_each {
+					border-bottom: 1px solid #ccc;
+					&:hover {
+						.message_each_clear{
+							display: flex !important; 
+						}
+					}
+					.message_each_main {
+						padding: 10px 20px;
+						width: 100%;
+						.badge {
+							height: 18px;
+							width: 18px;
+							text-align: center;
+							line-height: 16px;
+							padding: 0;
+							border-radius: 50%;
+						}
+						//在线
+						.line {
+							height: 10px;
+							width: 10px;
+							background-color: #13BC75;
+							border-radius: 50%;
+						}
+						//不在线
+						.not_line {
+							height: 10px;
+							width: 10px;
+							border-radius: 50%;
+							background-color: gray;
+						}
+					}
+					//删除
+					.message_each_clear {
+						width: 60px;
+						background-color: red;
+						cursor: pointer;
+						display: none !important; 
+					}
+				}
+			}
+		}
+		// 面板
+		.panel {
+			border: 1px solid #ddd;
+			height: 100%;
+			overflow: hidden;
+			.panel_header {
+				padding: 20px;
+				border-bottom: 1px solid #ddd;
+				#mesage_more{
+					display: flex;
+					justify-content: flex-end;
+					align-items: center;
+					div{
+						display: flex;
+						justify-content: space-between;
+						width:50px;
+						span{
+							display: block;
+							width:10px;
+							height:10px;
+							border-radius: 50%;
+							border:1px solid #ccc;
+						}
+					}
+				}
+				.panel_header_peer {
+					text-align: center;
+				}
+				.panel_close {
+					cursor: pointer;
+				}
+				#add_attribute,#add_groud_attribute{
+					background-color: #007BFF;
+					color:#fff;
+					border-radius: 4px;
+					padding:6px 14px;
+					width:120px;
+					line-height: 30px;
+					text-align: center;
+				}
+				#add_groud_attribute{
+					margin-right:20px;
+				}
+			}
+			.message_box{
+				height:72% !important;
+				width:100%;
+				overflow: auto;
+			}
+			.panel_main {
+				padding: 10px 20px 0;
+				box-sizing: border-box;
+				>.col-6 {
+					flex: 0;
+					margin-bottom: 20px;
+				}
+				.panel_main_message {
+					display: flex;
+					align-items: flex-start !important;
+					.panel_main_message_head {
+						width: 44px;
+						height: 44px;
+						border-radius: 50%;
+						// flex: 1;
+					}
+					.panel_main_message_info {
+						padding: 10px;
+						margin: 0 20px;
+						word-break: break-all;
+						width: 70%;
+						background-color:#02A7F0;
+						border-radius: 6px;
+						color:#fff;
+						// flex: 2;
+					}
+					.image{
+						width: 44px;
+						height: 44px;
+						border-radius: 50%;
+					}
+				}
+				.detil_panel_message {
+				    padding: 0;
+					list-style: none;
+					border-bottom: 1px solid #ccc;
+					li {
+							padding:10px 20px;
+						border-bottom: 1px solid #ddd;
+					}
+					p {
+						margin: 0;
+					}
+				}
+				.panel_intercalate {
+					border: 1px solid #ddd;
+				}
+			}
+			.panel_footer {
+				padding: 22px;
+				display: flex !important;
+				justify-content: space-between !important;
+				height:20%;
+				box-sizing: border-box;
+				border-top: 1px solid #ccc;
+				button {
+					margin-top: 10px;
+				}
+				textarea{
+					resize: none;
+				}
+			}
+		}
+
+		.panel_hide{
+			display: none !important;
+		}
+		.determine_button{
+			width:80px;
+			display: inline-block;
+			color:#fff;
+			background-color:#007BFF ;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.detele{
+			background-color: #E02433;
+		}
+	}
+}
+
+// 暂无
+.not_available {
+	padding: 20px;
+	text-align: center;
+}
+// 警告框
+.warning_box {
+	width: 400px;
+	position: absolute;
+	z-index: 10;
+	text-align: center;
+	.alert_characters {
+		width: 100%;
+	}
+}
+// 添加属性
+.modal-title {
+	width: 100%;
+	text-align: center;
+}
+#staticBackdrop{
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	.staticBackdrop_son{
+		position: absolute;
+		top: 0;bottom: 0;left: 0;right: 0;
+		margin: auto;
+	}
+}
+
+.message_page_hide{
+	display: none !important;
+}
+span,.panel_header_peer{
+	width:80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.old_msg_item{
+	position: relative;
+}
+
+.message_each_clear{
+	position: absolute;
+	top:0;
+	bottom:0;
+	right:0;
+}
+
+.editor{
+	position: relative;
+	height:20%;
+	border-top:1px solid #ddd;
+	display:flex;
+	justify-content: space-between;
+}
+
+#message_text{
+	resize: none;
+}
+
+#send_message{
+	position: absolute;
+	bottom: 10px;
+	right:30px;
+	font-size: 14px;
+	width:100px;
+}
+
+#outlogin{
+	position: fixed;
+	background-color: #fff;
+	border-radius: 6px;
+	z-index: 9999;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width:300px;
+	height:150px;
+	padding:20px;
+	text-align: center;
+	color:#6b6b6b;
+	border:1px solid #ccc;
+}
+
+#outlogin p{
+	margin-top:20px;
+	margin-bottom:40px;
+}
+
+#outlogin span{
+	margin:auto;
+	color:#fff;
+	display: block;
+	width:70px;
+	line-height: 30px;
+	background-color: #02A7F0;
+	border-radius: 6px;
+}
