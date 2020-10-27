@@ -122,9 +122,9 @@ $('#not_down').click(() => {
 
 // 私聊
 $('#private').click(() => {
-    Store.useridOrChannelid = $('#useridOrChannelid').val();
-    if($('#useridOrChannelid').val() == '' || Store.uid == Store.useridOrChannelid) return;
-    $('#useridOrChannelid').val('');
+    Store.useridOrChannelid = $('#userId').val();
+    if(Store.useridOrChannelid == '' || Store.uid == Store.useridOrChannelid || Store.useridOrChannelid == 'undefined' ||  !Store.useridOrChannelid) return;
+    $('#userId').val("");
     $('#message_page').css('opacity', 1);
     $('#panel_x').css('display', 'none');
     $('#user_setting_page').css('display', 'none');
@@ -142,9 +142,9 @@ $('#private').click(() => {
 
 // 群聊
 $('#group_chat').click(async () => {
-    Store.useridOrChannelid = $('#useridOrChannelid').val();
-    if(Store.useridOrChannelid == '') return;
-    $('#useridOrChannelid').val('');
+    Store.useridOrChannelid = $('#userId').val();
+    if(Store.useridOrChannelid == '' || Store.useridOrChannelid == undefined ) return;
+    $('#userId').val('');
     $('#show_message_list').html('');
     $('#message_page').css('opacity', 1);
     $('#panel_x').css('display', 'none');
@@ -184,7 +184,7 @@ $('#send_message').click(async () => {
         draw(Store.useridOrChannelid);
         var PeersOnlineStatusResult = await Store.client.queryPeersOnlineStatus([Store.useridOrChannelid]);
         old_message({text: message},  Store.useridOrChannelid, PeersOnlineStatusResult[Store.useridOrChannelid]);
-        Store.client.sendMessageToPeer({text: message}, Store.useridOrChannelid).then(() => {
+        Store.client.sendMessageToPeer({text: message}, Store.useridOrChannelid, {enableHistoricalMessaging:true,enableOfflineMessaging:true}).then(() => {
             scrollToEnd();
         });
     }else{// 群聊
@@ -590,7 +590,7 @@ function dialog(dialog_bool, message){
 function outlogin(){
     Store.client.logout();
     $('#message_text').val('');
-    $('#useridOrChannelid').val('');
+    $('#userId').val('');
     $('#message').html('');
     $('#panel_title').html('');
     $('#navbarDropdown').html('');
