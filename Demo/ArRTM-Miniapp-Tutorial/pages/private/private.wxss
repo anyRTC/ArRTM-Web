@@ -1,0 +1,202 @@
+.private{
+  color:#6b6b6b;
+  font-size: 34rpx;
+  height:100vh;
+}
+
+.nav-title{
+  position: fixed;
+  box-sizing: border-box;
+  padding-top: 6%;
+  width:100%;
+  z-index: 99;
+  top:0;
+  background-color: #fff;
+}
+
+.nav-title .image{
+  position: absolute;
+  top:0;
+  left:30rpx;
+  height:100%;
+  width:40px;
+  padding-top:6%;
+  box-sizing: border-box;
+}
+
+.nav-title .image image{
+  width:40rpx;
+  height:40rpx;
+}
+
+.nav-title .title{
+  display: block;
+  text-align: center;
+  width:60%;
+  margin:auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nav-title view{
+  height:100%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.private .show_msg{
+  height:90%;
+  box-sizing: border-box;
+  padding:0 10rpx;
+}
+
+.private .show_msg image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+}
+
+.private .show_msg view text{
+  display: block;
+  box-sizing: border-box;
+  padding:20rpx;
+  max-width:68%;
+  border-radius: 10rpx;
+  color:#fff;
+}
+
+.private .show_msg .you{
+  padding-top:50rpx;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30rpx;
+}
+
+.private .show_msg .you text{
+    background-color: #02A7F0;
+}
+
+.private .show_msg .you image{
+  margin-right: 20rpx;
+}
+
+.private .show_msg .self{
+  padding-top:50rpx;
+  position: relative;
+  display: flex;
+  align-items: start;
+  flex-direction: row-reverse;
+  margin-bottom: 30rpx;
+}
+
+.private .show_msg .self text{
+  background-color: #1AAD19;
+}
+
+.private .show_msg .self image{
+  margin-left: 20rpx;
+}
+
+.private .send_msg{
+  height:10%;
+  display: flex;
+  /* background-color: #F2F2F2; */
+  align-items: center;
+  box-sizing: border-box;
+  padding:0 10rpx;
+}
+
+.private .send_msg textarea{
+  box-sizing: border-box;
+  padding:20rpx 30rpx;
+  overflow:hidden;
+  height:100rpx;
+  border-radius: 50rpx;
+  background-color: #f2f2f2;
+}
+
+.private .send_msg  view{
+  width:200rpx;
+  display: flex;
+  height:100rpx;
+  align-items: center;
+  margin-left:10rpx;
+  overflow: hidden;
+  background-color: #02A7F0;
+  border-radius: 50rpx;
+}
+
+.private .send_msg view button{
+  background-color: #02A7F0;
+  color:#fff;
+  padding:16rpx 0;
+  font-weight: normal;
+  font-size: 30rpx;
+}
+
+.private .msg_prompt{
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.private .prompt_box{
+  width:550rpx;
+  height:350rpx;
+  border:1px solid #ccc;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.private .prompt_box .msg_content{
+  display: block;
+  text-align: center;
+  line-height: 60rpx;
+  height:250rpx;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding-top: 50rpx;
+}
+
+.private .prompt_box .msg_button{
+  display: block;
+  text-align: center;
+  line-height: 100rpx;
+  color:#169BD5;
+  border-top:1px solid #ccc;
+}
+
+text{
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+}
+
+#right,#left{
+  position: absolute;
+  right:120rpx;
+  top:0;
+  background-color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 0rpx;
+  color:#6b6b6b;
+  text-align: right;
+  padding-right:0;
+}
+#left{
+  left:120rpx;
+  text-align: left;
+  padding-left:0;
+}

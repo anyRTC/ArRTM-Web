@@ -1,0 +1,42 @@
+<view class="home data-v-86d91950">
+
+    <!-- 自定义导航栏 start -->
+    <view class='nav-title' style='height:{{navH}}px'>
+        <view class='image'><image bindtap="navlinkBack" src='../../images/lsft.png'></image></view>
+        <view><text class='title' bindtap="toSetting">{{title}}</text></view>
+    </view>
+    <!-- 自定义导航栏 end -->
+
+    <!-- 频道或用户 start -->
+    <input class="home_input data-v-86d91950" style='margin-top:{{navH + 20}}px' type="text" bindinput="get_id" value='{{id}}' placeholder="请输入用户ID或者频道ID"/>
+    <button class="home_button data-v-86d91950" type="default" data-event-opts="{{[['tap',[['login']]]]}}" bindtap="go_private">单聊</button>
+    <button class="home_button data-v-86d91950" type="default" data-event-opts="{{[['tap',[['login']]]]}}" bindtap="go_group_private">群聊</button>
+    <!-- 频道或用户 end -->
+
+    <!-- 历史单聊列表 start -->
+    <view class="message_history data-v-86d91950">
+        <text class="message_son_text data-v-86d91950">历史单聊消息</text>
+        <view class='message_list data-v-86d91950 {{item.touch == "to_left" && message_index == index? "show" : ""}}' data-id='{{item.peerId}}' bindtap="go_private_two" wx:for="{{message_list}}"  wx:key="index" bindtouchstart='touchStart' bindtouchend="touchEnd" data-index='{{index}}'>
+            <!-- 消息 start -->
+            <view class='msg_list_left' data-index='{{index}}' data-id='{{item.peerId}}'>
+                <view class="user_messageNum data-v-86d91950" data-id='{{item.peerId}}' data-index='{{index}}'>
+                    <text class="user_messageNum_username data-v-86d91950" data-id='{{item.peerId}}' data-index='{{index}}'>{{item.peerId}}</text>
+                    <text wx:if='{{item.user_message_number != 0}}' class="user_message_number data-v-86d91950" data-id='{{item.peerId}}' data-index='{{index}}'>{{item.user_message_number}}</text>
+                </view>
+                <view class="newMessage_status data-v-86d91950" data-id='{{item.peerId}}' data-index='{{index}}'>
+                    <text class="newMessage_status_son data-v-86d91950" data-id='{{item.peerId}}' data-index='{{index}}'>{{item.new_message}}</text>
+                    <text wx:if='{{item.login_status}}' class="user_status data-v-86d91950" data-id='{{item.peerId}}' data-index='{{index}}'></text>
+                    <text wx:else class="no_login" data-id='{{item.peerId}}' data-index='{{index}}'></text>
+                </view>
+            </view>
+            <!-- 消息 end -->
+
+            <!-- 滑动删除 start -->
+            <view class='detele_msg' catchtap ="my_detele" data-index='{{index}}'>
+                <text data-index='{{index}}'>删除</text>
+            </view>
+            <!-- 滑动删除 end -->
+        </view>
+    </view>
+    <!-- 历史单聊列表 end -->
+</view>

@@ -1,0 +1,181 @@
+.setting{
+  font-size: 34rpx;
+}
+.setting .user_attribute{
+  display: block;
+  color:#6b6b6b;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  padding:0 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.setting .zero{
+  display: block;
+  text-align: center;
+  margin-top:100rpx;
+}
+
+.setting .attribute_list_item{
+  box-sizing: border-box;
+  padding:0 30rpx;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  transition: .3s;
+}
+
+.setting .attribute_list .show{
+  transform: translateX(-300rpx);
+  background-color: #E7E7E7;
+}
+
+.setting .attribute_list_item .text{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 60rpx;
+  color:#6b6b6b;
+}
+
+.setting .attribute_list_item .changeordelete_attribute{
+  position: absolute;
+  right:-300rpx;
+  top:0;
+  width:300rpx;
+  height:100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting .changeordelete_attribute text{
+  line-height: 124rpx;
+  width:50%;
+  text-align: center;
+  display: block;
+  color:#fff;
+}
+
+.setting .changeordelete_attribute .change_attr{
+  background-color: #169BD5;
+}
+
+.setting .changeordelete_attribute .detele_attr{
+  background-color: #D9001B;
+}
+
+.setting .add_attribute{
+  background-color: #169BD5;
+  color:#fff;
+  font-weight: normal;
+  font-size: 34rpx;
+  width:300rpx;
+  margin-top:50rpx;
+}
+
+.setting .no_add{
+  background-color: #ccc;
+}
+
+.setting .dialog{
+  position: fixed;
+  z-index: 999;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setting .dialog .dialog_box{
+  width:700rpx;
+  height:430rpx;
+  border:1px solid #ccc;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+
+.setting .dialog .dialog_box .dialog_title{
+  text-align: center;
+  display: block;
+  line-height: 120rpx;
+  font-weight: 600;
+  font-size: 40rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.setting .dialog .dialog_box input{
+  display: block;
+  box-sizing: border-box;
+  padding-left:30rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.setting .dialog .dialog_box .dialog_button{
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting .dialog .dialog_box .dialog_button text{
+  display: block;
+  width:50%;
+  text-align: center;
+  color:#169BD5;
+  line-height: 110rpx;
+}
+
+.setting .dialog .cancal{
+  border-right: 1px solid #ccc;
+}
+
+.setting .add_success{
+  position: fixed;
+  bottom: -90rpx;
+  left:0;
+  right:0;
+  margin: auto;
+  display: block;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: rgba(0, 0, 0, .8);
+  color:#fff;
+  border-radius: 10rpx;
+  width:500rpx;
+}
+
+.setting .add_success_show{
+  animation: add_success_show .5s;
+  animation-fill-mode: forwards;
+}
+
+.setting .add_success_hide{
+  animation: add_success_hide .5s;
+}
+
+@keyframes add_success_show {
+  0%{
+    bottom: -90rpx;
+  }
+  80%{
+    bottom: 200rpx;
+  }
+  100%{
+    bottom: 150rpx;
+  }
+}
+
+@keyframes add_success_hide {
+  0%{
+    bottom: 150rpx;
+  }
+  80%{
+    bottom: 200rpx;
+  }
+  100%{
+    bottom: -90rpx;
+  }
+}

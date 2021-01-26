@@ -1,0 +1,13 @@
+<view class="login data-v-18804380">
+    <input class="login_input data-v-18804380" type="text" bindinput="input_user_id" value='{{user_id}}' placeholder="请输入用户ID"/>
+    <button class="login_button data-v-18804380" type="default" data-event-opts="{{[['tap',[['login']]]]}}" bindtap="login">登录</button>
+
+    <!-- 加载 start -->
+    <view class='loading {{is_loading && "show"}}'>
+        <view>
+            <image src='../../images/loading.png'></image>
+            <text>登录中...</text>
+        </view>
+    </view>
+    <!-- 加载 end -->
+</view>

@@ -1,0 +1,12 @@
+<view class='introduction'>
+    <!-- 属性列表 start -->
+    <view class='attribute_list'>
+        <view wx:for="{{attribute_list}}" class='attribute_list_item'>
+            <text class='text'>{{item.key}}</text>
+            <text class='text'>{{item.value}}</text>
+        </view>
+
+        <view class='havent' wx:if='{{attribute_list.length == 0}}'>暂无</view>
+    </view>
+    <!-- 属性列表 end -->
+</view>

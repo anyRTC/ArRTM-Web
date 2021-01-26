@@ -1,0 +1,43 @@
+<view class='private'>
+    <!-- 自定义导航栏 start -->
+    <view class='nav-title' style='height:{{navH}}px'>
+        <view class='image'><image bindtap="navlinkBack" src='../../images/lsft.png'></image></view>
+        <view><text class='title' data-url='../introduction/introduction' data-id='{{id}}' bindtap='navlinkTo'>{{id}}</text></view>
+    </view>
+    <!-- 自定义导航栏 end -->
+    
+    <!-- 消息显示 start -->
+    <scroll-view class='show_msg' style='padding-top:{{navH}}px' scroll-y="true" scroll-into-view='{{scroll_bottom}}'>
+        <view wx:for="{{msg_list}}" wx:key='index' id='item-{{index}}'>
+            <view class='you' wx:if='{{item.you_portrait}}'>
+                <text id='left'>{{item.peerId}}</text>
+                <image src='{{item.you_portrait}}'></image>
+                <text>{{item.content}}</text>
+            </view>
+            <view class='self' wx:else>
+                <text id='right'>{{my_id}}</text>
+                <image data-url='../setting/setting' bindtap='navlinkTo' src='{{self_portrait}}'></image>
+                <text>{{item.content}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <!-- 消息显示 end -->
+
+     <!-- 输入框 start -->
+    <view class='send_msg'>
+        <textarea maxlength='-1' show-confirm-bar="{{false}}" bindinput="textarea_text" value='{{textarea}}' cursor-spacing='140' placeholder="请输入聊天消息"></textarea>
+        <view>
+          <button bindtap="send_message">发送</button>
+        </view>
+    </view>
+    <!-- 输入框 end -->
+
+    <!-- 消息提示框 start -->
+    <view class='msg_prompt'>
+        <view class='prompt_box'>
+            <text class='msg_content'>{{msg_content}}</text>
+            <text class='msg_button'>确定</text>
+        </view>
+    </view>
+    <!-- 消息提示框 end -->
+</view>

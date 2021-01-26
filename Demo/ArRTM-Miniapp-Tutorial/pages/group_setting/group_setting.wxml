@@ -1,0 +1,40 @@
+<view class='group_setting'>
+    <text class='user_attribute'>群信息</text>
+    <text wx:if='{{attribute_list.length == 0}}' class='zero'>暂无 ~</text>
+
+    <!-- 属性列表 start -->
+    <view class='attribute_list'>
+        <view wx:for="{{attribute_list}}" class='attribute_list_item {{item.touch == "to_left" && message_index == index? "show" : ""}}' bindtouchstart='touchStart' bindtouchend="touchEnd" data-index='{{index}}'>
+            <text class='text'  data-index='{{index}}'>{{item.key}}</text>
+            <text class='text'  data-index='{{index}}'>{{item.value}}</text>
+            <view class='changeordelete_attribute' data-index='{{index}}'>
+                <text class='change_attr' data-index='{{index}}' bindtap='change_attr'>修改</text>
+                <text class='detele_attr' data-index='{{index}}' bindtap='detele_attr'>删除</text>
+            </view>
+        </view>
+    </view>
+    <!-- 属性列表 end -->
+
+    <!-- 添加属性 start -->
+    <button wx:if='{{attribute_list.length < 32}}' class='add_attribute' bindtap='show_dialog'>添加属性</button>
+    <button wx:else class='add_attribute no_add'>添加属性</button>
+    <!-- 添加属性 end -->
+
+    <!-- 弹窗 start -->
+    <view class='dialog' wx:if='{{dialog}}'>
+        <view class='dialog_box'>
+            <text class='dialog_title'>{{dialog_title}}</text>
+            <input type="text" placeholder="键" bindinput="input_change" value='{{key}}' data-type='key'></input>
+            <input type="text" placeholder="值" bindinput="input_change" value='{{value}}' data-type='value'></input>
+            <view class='dialog_button'>
+                <text class='cancal' bindtap='hide_dialog'>取消</text>
+                <text bindtap='add_attribute_success'>确定</text>
+            </view>
+        </view>
+    </view>
+    <!-- 弹窗 end -->
+
+    <!-- 消息提示框 start -->
+    <text class='add_success {{add_success_name}}'>{{msg_content}}</text>
+    <!-- 消息提示框 end -->
+</view>

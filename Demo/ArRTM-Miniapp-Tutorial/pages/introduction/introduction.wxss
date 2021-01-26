@@ -1,0 +1,26 @@
+.introduction{
+  font-size: 34rpx;
+  box-sizing: border-box;
+  padding-top:50rpx;
+}
+
+.introduction .attribute_list_item{
+  box-sizing: border-box;
+  padding:0 30rpx;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  transition: .3s;
+}
+
+.introduction .attribute_list_item .text{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 60rpx;
+  color:#6b6b6b;
+}
+
+.introduction .havent{
+  text-align: center;
+}
