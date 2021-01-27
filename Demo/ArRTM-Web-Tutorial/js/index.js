@@ -247,7 +247,7 @@ $('#outlogin_end').click(() => {
 });
 
 // 个人属性设置 属性列表 事件委托
-$('#userSettingList').click(async (event) => {
+$('#user_setting_list').click(async (event) => {
     var $target = $(event.target);
     var $target_parent = $target.parent().parent();
     if( $target.is('span')){
@@ -527,8 +527,8 @@ async function get_attr(){
                 <span class='determine_button detele'>删除</span>
             </div>
         </li>`;
-    })
-    $('#userSettingList').html(template);
+    });
+    $('#user_setting_list').html(template);
     Store.isNotadd = Store.userSettingList.length;
     if(Store.isNotadd == Store.notaddNum){
         $('#add_attribute').css({'background': '#7F7F7F', 'color': '#ccc'});
