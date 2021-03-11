@@ -3,8 +3,9 @@
 1：初始化项目。
 
 - 终端进入 ArRTM-Web/Demo/ArRTM-Miniapp-Tutorial 目录。![](https://raw.githubusercontent.com/anyRTC/ArRTM-Web/master/Demo/ArRTM-Miniapp-Tutorial/images/cmd_path.png)
-
-- 运行 `npm init -f`  命令进行项目初始化，成功之后便会在当前目录自动生成 package.json 文件。![](https://raw.githubusercontent.com/anyRTC/ArRTM-Web/master/Demo/ArRTM-Miniapp-Tutorial/images/package_json.png)
+- 运行 `npm init -f`  命令进行项目初始化。![](https://raw.githubusercontent.com/anyRTC/ArRTM-Web/master/Demo/ArRTM-Miniapp-Tutorial/images/npm_init.png)
+- 成功之后便会在当前目录自动生成 package.json 文件。
+  ![](https://raw.githubusercontent.com/anyRTC/ArRTM-Web/master/Demo/ArRTM-Miniapp-Tutorial/images/package_json.png)
 
 2：安装 SDK 包。
 
