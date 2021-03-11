@@ -1,4 +1,5 @@
-anyrtc RTM Web SDK 是通过 HTML 网页加载的 JavaScript 库。RTM Web SDK 库在网页浏览器中通过 API 调用声网的实时消息服务。
+anyrtc RTM Web SDK 是通过 HTML 网页加载的 JavaScript 库。RTM Web SDK 库在网页浏览器中借助实时消息SDK，轻松实现社交沟通、直播聊天室、互动教育等场景。
+
 
 ## 导入
 

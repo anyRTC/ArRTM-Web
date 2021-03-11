@@ -1,5 +1,5 @@
 //app.js
-let ArRTM = require("./utils/ArRTM@latest");
+const ArRTM = require("ar-rtm-sdk");
 import config from "./utils/config";
 const { APPID, SERVERADD, PORT, WSS  } = config;
 
