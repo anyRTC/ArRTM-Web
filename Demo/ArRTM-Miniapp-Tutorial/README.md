@@ -30,3 +30,7 @@
 - 微信开发者工具 > 详情 > 本地设置 > 使用npm模块。
 
   ![](https://raw.githubusercontent.com/anyRTC/ArRTM-Web/master/Demo/ArRTM-Miniapp-Tutorial/images/use_npm.png)
+
+5：使用 anyrtc 后台生成的项目 appid
+
+- 在utils/config.js 文件中配置 appid。
