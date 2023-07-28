@@ -1,5 +1,5 @@
 //app.js
-const ArRTM = require("ar-rtm-sdk");
+import ArRTM from "ar-rtm-sdk";
 import config from "./utils/config";
 const { APPID, SERVERADD, PORT, WSS  } = config;
 
@@ -24,7 +24,7 @@ App({
 			});
 			return;
 		};
-		let client = await ArRTM.createInstance(APPID);
+		let client = ArRTM.createInstance(APPID);
 		if (SERVERADD && PORT) {
 			const RtmParameters = {
 				confPriCloudAddr: {
@@ -35,7 +35,7 @@ App({
 			};
 			client.setParameters(RtmParameters);
 		};
-	
+
 		//监听点对点消息
 		client.on("MessageFromPeer", async (message, peerId, messagePros) => {
 			if (messagePros.isOfflineMessage) { //离线消息

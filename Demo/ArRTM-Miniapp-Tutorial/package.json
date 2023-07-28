@@ -1,0 +1,14 @@
+{
+  "name": "arrtm-miniapp-tutorial",
+  "version": "1.0.0",
+  "description": "1：初始化项目",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ar-rtm-sdk": "^1.0.11"
+  }
+}
